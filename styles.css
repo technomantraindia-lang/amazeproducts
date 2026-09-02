@@ -877,6 +877,183 @@ img {
 }
 
 /* ==========================================================================
+   5.8 THE AMAZE STANDARD SECTION (03 / THE AMAZE STANDARD)
+   ========================================================================== */
+.amaze-standard-section {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #f4f9ff 0%, #eef6ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.standard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left Media Wrapper */
+.standard-media-wrapper {
+  position: relative;
+  border-radius: 28px;
+  overflow: visible;
+}
+
+.standard-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 20px 45px rgba(3, 37, 76, 0.12);
+  display: block;
+}
+
+/* Overlapping Stat Card */
+.standard-stat-card {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px 28px;
+  box-shadow: 0 16px 40px rgba(3, 37, 76, 0.16);
+  max-width: 250px;
+  border: 1px solid rgba(0, 102, 255, 0.1);
+  z-index: 5;
+}
+
+.stat-card-badge {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #0066ff;
+  margin-bottom: 6px;
+}
+
+.stat-card-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.stat-card-desc {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* Right Content */
+.standard-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--primary-blue);
+  margin-bottom: 16px;
+}
+
+.standard-badge .badge-num {
+  color: #ff6b00;
+  font-weight: 800;
+}
+
+.standard-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 18px;
+}
+
+.standard-title .highlight-blue {
+  color: #0066ff;
+}
+
+.standard-desc {
+  font-size: 0.98rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 36px;
+  max-width: 500px;
+}
+
+/* 3 Items List */
+.standard-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.standard-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.standard-item:last-child {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.item-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0066ff;
+  width: 24px;
+}
+
+.item-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid #dbeafe;
+  color: #0066ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.item-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.item-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
    6. WHY CHOOSE US SECTION
    ========================================================================== */
 .why-section {

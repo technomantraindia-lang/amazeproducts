@@ -689,22 +689,13 @@ img {
    5.5 INDUSTRIES SECTION
    ========================================================================== */
 .industries-section {
-  padding: 85px 0 95px 0;
-  background: linear-gradient(180deg, #eef7ff 0%, #e2f0fd 100%);
+  padding: 95px 0 105px 0;
+  background-image: url('assets/industries-bg.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
-}
-
-.industries-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.05) 0%, transparent 40%),
-                    radial-gradient(circle at 90% 80%, rgba(0, 102, 255, 0.06) 0%, transparent 40%);
-  pointer-events: none;
 }
 
 .industries-header {

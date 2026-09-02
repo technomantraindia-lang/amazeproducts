@@ -523,7 +523,102 @@
 
       </div>
     </div>
-  </div>
+  <!-- 9.5 REQUEST A QUOTE SECTION -->
+  <section class="quote-section" id="quote">
+    <div class="quote-bg-splash">
+      <img src="assets/left-splash.jpg" alt="" class="splash-left">
+    </div>
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="quote-grid">
+        
+        <!-- Left Side: Title & Info -->
+        <div class="quote-info">
+          <span class="quote-badge"><span class="badge-num">06 /</span> REQUEST A QUOTE</span>
+          <h2 class="quote-title">
+            TELL US<br>
+            WHAT<br>
+            <span class="highlight-blue">YOU'RE<br>BUILDING.</span>
+          </h2>
+          <p class="quote-desc">
+            Share your project details and selected products. Our commercial team will return a tailored recommendation within one business day.
+          </p>
+          
+          <!-- Selected Products Card -->
+          <div class="selected-products-card">
+            <div class="cart-icon-circle">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div>
+              <div class="cart-count-title">
+                <span class="cart-num" id="selectedCount">0</span> PRODUCTS SELECTED
+              </div>
+              <p class="cart-subtext">Add items from the product range above.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Form Card -->
+        <div class="quote-form-card">
+          <form id="quoteForm" onsubmit="event.preventDefault(); alert('Thank you! Your quote request has been submitted successfully.');">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">FULL NAME</label>
+                <input type="text" id="fullName" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="workEmail">WORK EMAIL</label>
+                <input type="email" id="workEmail" placeholder="name@company.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="companyName">COMPANY</label>
+                <input type="text" id="companyName" placeholder="Organization name">
+              </div>
+              <div class="form-group">
+                <label for="country">COUNTRY</label>
+                <input type="text" id="country" placeholder="Where is the project?">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="projectType">PROJECT TYPE</label>
+                <select id="projectType">
+                  <option value="" disabled selected>Select project type</option>
+                  <option value="waterpark">Water Park & Slides</option>
+                  <option value="resort">Resort & Hotel Pool</option>
+                  <option value="adventure">Adventure & Rafting Park</option>
+                  <option value="municipal">Municipal & Public Pool</option>
+                  <option value="custom">Custom Inflatables Order</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="targetDelivery">TARGET DELIVERY</label>
+                <input type="text" id="targetDelivery" placeholder="Select target date" onfocus="(this.type='date')" onblur="(this.type='text')">
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="projectDetails">PROJECT DETAILS</label>
+              <textarea id="projectDetails" rows="4" placeholder="Attractions, expected quantities, customization needs or anything else we should know..."></textarea>
+            </div>
+
+            <div class="form-footer-row">
+              <button type="submit" class="btn btn-primary btn-quote-submit">
+                SEND QUOTE REQUEST <i class="fas fa-arrow-right"></i>
+              </button>
+              <div class="whatsapp-note">
+                Prefer a faster conversation? <a href="https://wa.me/919833594449" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a> our commercial team.
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- 10. FOOTER SECTION -->
   <footer class="main-footer" id="contact">

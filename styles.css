@@ -1174,6 +1174,215 @@ img {
 }
 
 /* ==========================================================================
+   9.5 REQUEST A QUOTE SECTION
+   ========================================================================== */
+.quote-section {
+  padding: 95px 0 105px 0;
+  background: linear-gradient(180deg, #eef7ff 0%, #d8ecff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-bg-splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.quote-bg-splash .splash-left {
+  position: absolute;
+  bottom: -40px;
+  left: -50px;
+  width: 420px;
+  opacity: 0.35;
+  filter: hue-rotate(190deg);
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* Quote Info Left */
+.quote-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--primary-blue);
+  margin-bottom: 16px;
+}
+
+.quote-badge .badge-num {
+  color: #ff6b00;
+  font-weight: 800;
+}
+
+.quote-title {
+  font-size: 3.25rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.quote-title .highlight-blue {
+  color: #0066ff;
+}
+
+.quote-desc {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 440px;
+  margin-bottom: 30px;
+}
+
+/* Cart Selected Card */
+.selected-products-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 12px 30px rgba(3, 37, 76, 0.08);
+  border: 1px solid rgba(0, 102, 255, 0.12);
+  max-width: 400px;
+}
+
+.cart-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--accent-light-blue);
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.cart-count-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  letter-spacing: 0.5px;
+}
+
+.cart-count-title .cart-num {
+  font-size: 1.6rem;
+  color: var(--primary-blue-dark);
+  margin-right: 4px;
+}
+
+.cart-subtext {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Form Card Right */
+.quote-form-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(3, 37, 76, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.full-width {
+  margin-bottom: 28px;
+}
+
+.form-group label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  padding: 12px 16px;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  background-color: #ffffff;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.15);
+}
+
+.form-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-quote-submit {
+  padding: 14px 32px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+}
+
+.whatsapp-note {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.whatsapp-note a {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.whatsapp-note a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
    10. FOOTER SECTION
    ========================================================================== */
 .main-footer {

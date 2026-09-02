@@ -686,6 +686,199 @@ img {
 }
 
 /* ==========================================================================
+   5.5 INDUSTRIES SECTION
+   ========================================================================== */
+.industries-section {
+  padding: 85px 0 95px 0;
+  background: linear-gradient(180deg, #eef7ff 0%, #e2f0fd 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.industries-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(0, 102, 255, 0.06) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.industries-header {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.industries-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--primary-blue);
+  margin-bottom: 12px;
+}
+
+.industries-badge .badge-num {
+  color: #ff6b00;
+  font-weight: 800;
+}
+
+.industries-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.industries-title .highlight-blue {
+  color: #0066ff;
+  display: block;
+}
+
+.industries-desc-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.industries-desc {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 440px;
+}
+
+/* Industries Grid & Cards */
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.industry-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(3, 37, 76, 0.07);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.industry-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 82, 204, 0.15);
+}
+
+.industry-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-color: #e2e8f0;
+}
+
+.industry-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.industry-card:hover .industry-img-wrapper img {
+  transform: scale(1.06);
+}
+
+/* Number Badges */
+.industry-num-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #ffffff;
+  padding: 4px 14px;
+  border-radius: 8px;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.badge-teal { background-color: #00a896; }
+.badge-blue { background-color: #0066ff; }
+.badge-orange { background-color: #ff6b00; }
+.badge-purple { background-color: #8b5cf6; }
+
+/* Card Body & Footer */
+.industry-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 4px 6px 6px 6px;
+}
+
+.industry-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.industry-card-desc {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  min-height: 44px;
+}
+
+.industry-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: auto;
+}
+
+.industry-arrow-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.btn-teal { background-color: #00a896; }
+.btn-blue { background-color: #0066ff; }
+.btn-orange { background-color: #ff6b00; }
+.btn-purple { background-color: #8b5cf6; }
+
+.industry-arrow-btn:hover {
+  transform: scale(1.1) translateX(2px);
+  filter: brightness(1.1);
+}
+
+/* ==========================================================================
    6. WHY CHOOSE US SECTION
    ========================================================================== */
 .why-section {

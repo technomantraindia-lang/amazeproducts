@@ -1387,16 +1387,20 @@ img {
 }
 
 .footer-logo {
-  height: 76px;
-  width: auto;
+  height: 90px;
+  width: 90px;
   margin-bottom: 16px;
   border-radius: 50%;
-  object-fit: contain;
+  object-fit: cover;
+  background-color: #ffffff;
+  padding: 4px;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   transition: transform 0.3s ease;
 }
 
 .footer-logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .footer-desc {

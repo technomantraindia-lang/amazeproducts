@@ -302,11 +302,11 @@ img {
 .hero-section {
   position: relative;
   background-color: #041d3d;
-  min-height: 640px;
+  min-height: 580px;
   display: flex;
   align-items: center;
-  overflow: hidden;
-  padding-bottom: 70px;
+  overflow: visible;
+  padding-bottom: 40px;
 }
 
 .hero-bottom-wave {
@@ -349,17 +349,18 @@ img {
 
 .hero-content {
   position: relative;
-  z-index: 10;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  padding: 60px 0;
+  padding: 60px 0 80px 0;
+  width: 100%;
 }
 
 .hero-text {
   color: #ffffff;
-  margin-left: -140px;
+  margin-left: 0;
+  max-width: 620px;
 }
 
 .hero-tagline {
@@ -438,19 +439,21 @@ img {
   padding-left: 2px;
 }
 
-/* Floating Trust Badge */
+/* Floating Trust Badge Positioned at Bottom Right Cover Side */
 .hero-badge-card {
-  background: rgba(255, 255, 255, 0.95);
+  position: absolute;
+  right: 20px;
+  bottom: -35px;
+  z-index: 30;
+  background: #ffffff;
   backdrop-filter: blur(12px);
-  width: 230px;
-  height: 230px;
+  width: 210px;
+  height: 210px;
   border-radius: 50%;
-  padding: 24px 20px;
-  box-shadow: var(--shadow-lg);
+  padding: 20px 16px;
+  box-shadow: 0 14px 35px rgba(3, 37, 76, 0.22);
   text-align: center;
-  margin-left: auto;
-  margin-top: 90px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 4px solid #ffffff;
   animation: float 4s ease-in-out infinite;
   display: flex;
   flex-direction: column;
@@ -1196,13 +1199,18 @@ img {
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
   .hero-content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 100px;
   }
   .hero-text {
     margin-left: 0;
   }
   .hero-badge-card {
-    margin: 20px auto 0 auto;
+    right: 20px;
+    bottom: -25px;
+    width: 190px;
+    height: 190px;
   }
   .stats-banner-card {
     grid-template-columns: repeat(2, 1fr);

@@ -171,4 +171,29 @@ document.addEventListener('DOMContentLoaded', () => {
   if (statsBanner) {
     observer.observe(statsBanner);
   }
+
+  // 6. Smart Auto-Hiding / Revealing Header on Scroll
+  const mainHeader = document.querySelector('.main-header');
+  let lastScrollY = window.scrollY;
+
+  if (mainHeader) {
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 120) {
+        if (currentScrollY > lastScrollY && (!navMenu || !navMenu.classList.contains('active'))) {
+          // User is scrolling DOWN -> Hide Header
+          mainHeader.classList.add('header-hidden');
+        } else {
+          // User is scrolling UP -> Show Header
+          mainHeader.classList.remove('header-hidden');
+        }
+      } else {
+        // At top of page -> Show Header
+        mainHeader.classList.remove('header-hidden');
+      }
+
+      lastScrollY = currentScrollY;
+    }, { passive: true });
+  }
 });

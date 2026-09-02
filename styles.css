@@ -567,12 +567,8 @@ img {
    ========================================================================== */
 .products-section {
   padding: 90px 0;
-  background-image: url('ChatGPT Image Sep 2, 2026, 05_16_41 PM.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-color: #ffffff;
   position: relative;
-  overflow: hidden;
 }
 
 .products-header {

@@ -250,10 +250,15 @@ img {
 }
 
 .logo-img {
-  height: 56px;
+  height: 78px;
   width: auto;
   border-radius: 50%;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
 }
 
 .nav-menu {
@@ -1200,9 +1205,16 @@ img {
 }
 
 .footer-logo {
-  height: 52px;
+  height: 76px;
+  width: auto;
   margin-bottom: 16px;
   border-radius: 50%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
 }
 
 .footer-desc {

@@ -720,6 +720,75 @@
     </div>
   </div>
 
+  <!-- Get a Quote Popup Modal -->
+  <div class="quote-modal-overlay" id="quoteModalOverlay">
+    <div class="quote-modal-card">
+      <button class="quote-modal-close" id="quoteModalClose" aria-label="Close modal">&times;</button>
+      
+      <div class="quote-modal-header">
+        <span class="quote-modal-badge"><i class="fas fa-paper-plane"></i> REQUEST A QUOTE</span>
+        <h2 class="quote-modal-title">TELL US WHAT <span class="highlight-blue">YOU'RE BUILDING.</span></h2>
+        <p class="quote-modal-subtitle">Fill out your project details below and our commercial engineering team will respond within 24 hours.</p>
+      </div>
+
+      <form id="popupQuoteForm" class="quote-modal-form" onsubmit="event.preventDefault(); alert('Thank you! Your quote request has been submitted. Our team will contact you shortly.'); document.getElementById('quoteModalOverlay').classList.remove('active'); document.body.style.overflow='';">
+        <div class="modal-form-row">
+          <div class="modal-form-group">
+            <label for="popFullName">FULL NAME *</label>
+            <input type="text" id="popFullName" placeholder="Enter your full name" required>
+          </div>
+          <div class="modal-form-group">
+            <label for="popWorkEmail">WORK EMAIL *</label>
+            <input type="email" id="popWorkEmail" placeholder="name@company.com" required>
+          </div>
+        </div>
+
+        <div class="modal-form-row">
+          <div class="modal-form-group">
+            <label for="popPhone">PHONE / WHATSAPP *</label>
+            <input type="tel" id="popPhone" placeholder="+91 98335 94449" required>
+          </div>
+          <div class="modal-form-group">
+            <label for="popCompany">COMPANY / PARK NAME</label>
+            <input type="text" id="popCompany" placeholder="Organization name">
+          </div>
+        </div>
+
+        <div class="modal-form-row">
+          <div class="modal-form-group">
+            <label for="popProjectType">PROJECT TYPE</label>
+            <select id="popProjectType">
+              <option value="" disabled selected>Select project category</option>
+              <option value="waterpark">Water Park & Slides</option>
+              <option value="resort">Resort & Hotel Pool</option>
+              <option value="adventure">Adventure & Rafting Park</option>
+              <option value="municipal">Municipal & Public Pool</option>
+              <option value="custom">Custom Inflatable Order</option>
+            </select>
+          </div>
+          <div class="modal-form-group">
+            <label for="popDelivery">TARGET DELIVERY DATE</label>
+            <input type="date" id="popDelivery">
+          </div>
+        </div>
+
+        <div class="modal-form-group full-width">
+          <label for="popDetails">PROJECT DETAILS / REQUIREMENTS</label>
+          <textarea id="popDetails" rows="3" placeholder="Tell us about your attraction needs, expected quantities, or custom branding requirements..."></textarea>
+        </div>
+
+        <div class="modal-form-footer">
+          <button type="submit" class="btn btn-primary btn-modal-submit">
+            SUBMIT QUOTE REQUEST <i class="fas fa-arrow-right"></i>
+          </button>
+          <div class="modal-whatsapp-note">
+            <i class="fab fa-whatsapp" style="color: #16a34a;"></i> Instant response? <a href="https://wa.me/919833594449" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- JavaScript -->
   <script src="script.js"></script>
 </body>

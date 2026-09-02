@@ -196,4 +196,51 @@ document.addEventListener('DOMContentLoaded', () => {
       lastScrollY = currentScrollY;
     }, { passive: true });
   }
+
+  // 7. Get a Quote Popup Modal Trigger Logic
+  const quoteModal = document.getElementById('quoteModalOverlay');
+  const quoteModalClose = document.getElementById('quoteModalClose');
+
+  if (quoteModal) {
+    const openQuoteModal = (e) => {
+      if (e) e.preventDefault();
+      quoteModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeQuoteModal = () => {
+      quoteModal.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    // Attach click handler to all 'Get a Quote' and relevant CTA buttons
+    const allButtons = document.querySelectorAll('a, button');
+    allButtons.forEach(btn => {
+      const text = btn.innerText.toLowerCase();
+      const href = btn.getAttribute('href');
+      if (
+        text.includes('get a quote') || 
+        text.includes('send quote') || 
+        (href && (href === '#quote' || href === '#contact' && text.includes('quote')))
+      ) {
+        btn.addEventListener('click', openQuoteModal);
+      }
+    });
+
+    if (quoteModalClose) {
+      quoteModalClose.addEventListener('click', closeQuoteModal);
+    }
+
+    quoteModal.addEventListener('click', (e) => {
+      if (e.target === quoteModal) {
+        closeQuoteModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && quoteModal.classList.contains('active')) {
+        closeQuoteModal();
+      }
+    });
+  }
 });

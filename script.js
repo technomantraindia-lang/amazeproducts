@@ -3,6 +3,57 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Motion system: reveal each element once as it enters the viewport.
+  const motionGroups = [
+    ['.top-bar, .main-header', 'fade-up'],
+    ['.hero-tagline, .hero-title, .hero-desc, .hero-actions, .hero-features', 'fade-up'],
+    ['.stats-banner-card', 'fade-up'],
+    ['.about-content', 'fade-left'],
+    ['.about-gallery', 'fade-right'],
+    ['.industries-header, .products-header, .why-header', 'fade-up'],
+    ['.standard-media-wrapper, .quote-info', 'fade-left'],
+    ['.standard-content, .quote-form-card', 'fade-right'],
+    ['.main-footer', 'fade-up']
+  ];
+
+  document.querySelectorAll('.industry-card, .why-card, .product-card, .cert-card, .standard-item').forEach((item, index) => {
+    item.classList.add('animate-on-scroll', 'fade-up', 'stagger-item');
+    item.style.setProperty('--motion-delay', `${Math.min(index % 6, 5) * 90}ms`);
+  });
+
+  motionGroups.forEach(([selector, animation]) => {
+    document.querySelectorAll(selector).forEach(element => {
+      element.classList.add('animate-on-scroll', animation);
+    });
+  });
+
+  document.querySelectorAll('.about-img-main, .about-img-sub, .standard-img, .cert-graphic, .product-img-wrapper').forEach(element => {
+    element.classList.add('animate-on-scroll', 'scale-in');
+  });
+  document.querySelectorAll('.hero-features span').forEach((element, index) => {
+    element.classList.add('animate-on-scroll', 'fade-up');
+    element.style.setProperty('--motion-delay', `${index * 100}ms`);
+  });
+
+  document.body.classList.add('motion-ready');
+
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -45px' });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(element => revealObserver.observe(element));
+  } else {
+    document.querySelectorAll('.animate-on-scroll').forEach(element => element.classList.add('is-visible'));
+  }
+
+  document.body.classList.add('page-ready');
+
   // 1. Mobile Menu Toggle
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
@@ -179,6 +230,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mainHeader) {
     window.addEventListener('scroll', () => {
       const currentScrollY = window.scrollY;
+
+      mainHeader.classList.toggle('header-scrolled', currentScrollY > 24);
 
       if (currentScrollY > 120) {
         if (currentScrollY > lastScrollY && (!navMenu || !navMenu.classList.contains('active'))) {

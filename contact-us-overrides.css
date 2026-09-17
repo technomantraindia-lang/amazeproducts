@@ -1,0 +1,164 @@
+/* Decorative waterpark artwork for the Contact Information card. */
+.contact-page .details-card {
+  background: url('cards background.png') center bottom / cover no-repeat;
+}
+
+/* Compact global-presence heading and statistics band. */
+.contact-page .contact-presence {
+  padding: 26px 0 56px;
+}
+
+.contact-page .presence-head {
+  grid-template-columns: minmax(265px, 1.1fr) minmax(580px, 2.2fr);
+  align-items: center;
+  gap: 34px;
+}
+
+.contact-page .presence-head > div:first-child {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  column-gap: 12px;
+  align-items: center;
+}
+
+.contact-page .presence-head .contact-kicker {
+  grid-row: span 2;
+  margin: 0;
+  font-size: 0;
+}
+
+.contact-page .presence-head .contact-kicker::before {
+  content: '〰';
+  color: #087be6;
+  font-size: 2.35rem;
+  line-height: 1;
+}
+
+.contact-page .presence-head h2 {
+  max-width: none;
+  margin: 0;
+  font-size: 0;
+  line-height: 1;
+}
+
+.contact-page .presence-head h2::before {
+  content: 'Our Global Presence';
+  display: block;
+  color: #062b70;
+  font: 800 clamp(1.25rem, 1.8vw, 1.8rem)/1 Outfit, sans-serif;
+}
+
+.contact-page .presence-head h2::after {
+  content: 'Bringing happiness to communities around the world. Visit offices or get in touch with our regional teams.';
+  display: block;
+  max-width: 390px;
+  margin-top: 7px;
+  color: #315b8f;
+  font: 600 clamp(.66rem, .82vw, .8rem)/1.35 'Plus Jakarta Sans', sans-serif;
+}
+
+.contact-page .presence-stats {
+  align-items: center;
+}
+
+.contact-page .presence-stats span {
+  padding: 0 clamp(13px, 2vw, 28px);
+  color: #087be6;
+  font-size: clamp(.62rem, .8vw, .8rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.contact-page .presence-stats b {
+  font-size: clamp(1.65rem, 2.65vw, 2.65rem);
+  line-height: 1;
+}
+
+/* The location-card and globe panel are intentionally omitted from this page. */
+.contact-page .location-grid {
+  display: none;
+}
+
+/* The separate bottom CTA is not needed on the Contact Us page. */
+.contact-page .contact-cta {
+  display: none;
+}
+
+/* Compact four-step process section. */
+.contact-page .process {
+  padding: 40px 0 52px;
+}
+
+.contact-page .process h2 {
+  margin-bottom: 5px;
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+}
+
+.contact-page .process .section-lead {
+  margin-bottom: 18px;
+  color: #315b8f;
+  font-size: clamp(.72rem, .95vw, .9rem);
+}
+
+.contact-page .process-grid {
+  gap: 24px;
+}
+
+.contact-page .process-grid article {
+  min-height: 112px;
+  padding: 21px 16px 14px 92px;
+  overflow: visible;
+  border-color: #cdeafa;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(8, 123, 230, .12);
+}
+
+.contact-page .process-grid article:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  top: 50%;
+  right: -21px;
+  z-index: 2;
+  color: #087be6;
+  font: 800 1.3rem/1 Outfit, sans-serif;
+  transform: translateY(-50%);
+}
+
+.contact-page .process-grid b {
+  top: 22px;
+  left: 14px;
+  font-size: 1.05rem;
+}
+
+.contact-page .process-grid i {
+  top: 18px;
+  bottom: auto;
+  left: 48px;
+  color: #087be6;
+  font-size: 2.15rem;
+}
+
+.contact-page .process-grid h3 {
+  margin: 4px 0 7px;
+  font-size: .92rem;
+}
+
+.contact-page .process-grid p {
+  font-size: .68rem;
+  line-height: 1.42;
+}
+
+@media (max-width: 900px) {
+  .contact-page .process-grid { gap: 17px; }
+  .contact-page .process-grid article:not(:last-child)::after { display: none; }
+}
+
+@media (max-width: 900px) {
+  .contact-page .presence-head { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .contact-page .presence-head > div:first-child { grid-template-columns: 38px 1fr; }
+  .contact-page .presence-head h2::after { max-width: 100%; }
+}

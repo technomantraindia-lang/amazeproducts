@@ -13,15 +13,15 @@ This workspace uses task capsules so developers can run parallel development wit
 ## Active capsule snapshot
 The extension refreshes this file automatically. Prefer its concise state over old chat history when resuming.
 
-- Capsule ID: tm-cap-3508266e5f3ae76435896bc0
+- Capsule ID: tm-cap-7b22c6a2f4367ae8eefb8459
 - Isolation: task-capsule-v411
-- Workspace ID: tm-ws-ae2fcdef28c6e8806012b52a
-- Window ID: tm-win-11373100ab89ae2bd830d996
+- Workspace ID: tm-ws-5f947422bfad7f0c287dfa87
+- Window ID: tm-win-2f9d3fa2eff9bfff62d40b4f
 - Project: fronts end
-- Framework: html-static
+- Framework: 
 - Developer mode: smart
 - Model mode: paid/manual
-- Active file: script.js
+- Active file: why-choose-us.css
 - Objective: Current developer prompt in this workspace/window only.
 - Blocker: none
 - Next action: Inspect current prompt and workspace evidence before editing.
@@ -29,7 +29,8 @@ The extension refreshes this file automatically. Prefer its concise state over o
 ## Touched files in this capsule
 
 ## Recent files in this workspace/window
-- script.js
+- why-choose-us.css
+- why-choose-us.html
 
 ## Hard rule
 If a file, goal, screenshot, terminal output, or decision is not connected to this capsule, do not use it for the current task.

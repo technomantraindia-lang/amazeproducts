@@ -11,6 +11,112 @@
     document.head.appendChild(sharedFooterStyles);
   }
 
+  // Keep every inner-page banner on the same visual grid. Individual pages
+  // retain their own image and copy, while height, horizontal gutters and
+  // typography remain consistent.
+  if (!document.getElementById('shared-banner-styles')) {
+    const sharedBannerStyles = document.createElement('style');
+    sharedBannerStyles.id = 'shared-banner-styles';
+    sharedBannerStyles.textContent = `
+      @media (min-width: 801px) {
+        .about-page .about-hero,
+        .industries-page .industry-hero,
+        .why-page .why-hero,
+        .products-page .product-hero,
+        main > .hero,
+        .contact-hero {
+          height: 620px !important;
+          min-height: 620px !important;
+          aspect-ratio: auto !important;
+        }
+
+        .about-page .about-container,
+        .industries-page .industry-container,
+        .why-page .why-wrap,
+        .products-page .p-wrap,
+        main > .hero .hero-content,
+        .contact-hero .contact-shell {
+          width: min(1380px, calc(100% - 160px)) !important;
+          max-width: 1380px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .about-page .hero-copy,
+        .industries-page .industry-hero-content,
+        .why-page .hero-content,
+        .products-page .p-hero-copy,
+        main > .hero .hero-content,
+        .contact-hero .contact-hero-copy {
+          padding-top: 100px !important;
+        }
+
+        main > .hero .hero-content {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        .contact-hero { align-items: flex-start !important; }
+
+        .about-page .hero-copy h1,
+        .industries-page .industry-hero h1,
+        .why-page .why-hero h1,
+        .products-page .product-hero h1,
+        main > .hero h1,
+        .contact-hero h1 {
+          font-size: 64px !important;
+          line-height: .98 !important;
+        }
+
+        .about-page .hero-copy h2,
+        .industries-page .industry-hero h2,
+        .why-page .why-hero h2,
+        .products-page .product-hero h2,
+        main > .hero h2,
+        .contact-hero h2 {
+          font-size: 28px !important;
+          line-height: 1.15 !important;
+        }
+
+        .about-page .hero-description,
+        .industries-page .industry-hero-content > p:not(.eyebrow),
+        .why-page .why-hero p:not(.kicker),
+        .products-page .p-hero-copy > p:not(.p-kicker),
+        main > .hero .hero-content > p:not(.eyebrow),
+        .contact-hero-copy > p:not(.contact-kicker) {
+          font-size: 16px !important;
+          line-height: 1.6 !important;
+          max-width: 560px !important;
+        }
+
+        .about-page .hero-scribble,
+        .industries-page .hero-scribble,
+        .why-page .scribble,
+        .products-page .p-scribble,
+        main > .hero .play-safe,
+        .contact-hero .contact-scribble {
+          top: 54px !important;
+          right: max(5vw, 72px) !important;
+          font-size: 30px !important;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .about-page .about-hero,
+        .industries-page .industry-hero,
+        .why-page .why-hero,
+        .products-page .product-hero,
+        main > .hero,
+        .contact-hero {
+          min-height: 540px !important;
+          height: 540px !important;
+          aspect-ratio: auto !important;
+        }
+      }
+    `;
+    document.head.appendChild(sharedBannerStyles);
+  }
+
   const page = window.location.pathname.split('/').pop() || 'index.html';
   const links = [
     ['index.html', 'Home'],

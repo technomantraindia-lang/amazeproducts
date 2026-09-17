@@ -30,3 +30,6 @@
 
 /* Use the exact Home header dimensions and sticky behavior on Industries too. */
 .industries-page .main-header{position:sticky;z-index:1000}.industries-page .main-header .container{height:auto}
+
+/* The Industries banner begins directly below the main navigation. */
+.industries-page .top-bar{display:none}

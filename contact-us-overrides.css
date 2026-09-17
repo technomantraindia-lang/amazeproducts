@@ -1,6 +1,6 @@
-/* Decorative waterpark artwork for the Contact Information card. */
+/* Decorative waterpark artwork for the Contact Information card with smooth gradient overlay. */
 .contact-page .details-card {
-  background: url('cards background.png') center bottom / cover no-repeat;
+  background: linear-gradient(135deg, rgba(238, 251, 255, 0.97) 0%, rgba(238, 251, 255, 0.92) 55%, rgba(238, 251, 255, 0.45) 100%), url('cards background.png') right bottom / cover no-repeat;
 }
 
 /* Compact global-presence heading and statistics band. */

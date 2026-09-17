@@ -296,4 +296,42 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 8. Contact Form Interactive Handler
+  const contactForm = document.getElementById('message');
+  const responseMsg = document.getElementById('formResponseMsg');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = contactForm.querySelector('.contact-submit-btn');
+      const btnSpan = submitBtn ? submitBtn.querySelector('span') : null;
+      const btnIcon = submitBtn ? submitBtn.querySelector('i') : null;
+
+      if (submitBtn && btnSpan) {
+        submitBtn.disabled = true;
+        const originalText = btnSpan.innerText;
+        btnSpan.innerText = 'Sending Message...';
+        if (btnIcon) btnIcon.className = 'fas fa-spinner fa-spin';
+
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          btnSpan.innerText = originalText;
+          if (btnIcon) btnIcon.className = 'fas fa-arrow-right';
+
+          if (responseMsg) {
+            responseMsg.className = 'form-response-msg success';
+            responseMsg.style.display = 'block';
+            responseMsg.innerText = '✨ Thank you! Your message has been sent. Our team will get back to you shortly.';
+          }
+          contactForm.reset();
+
+          setTimeout(() => {
+            if (responseMsg) responseMsg.style.display = 'none';
+          }, 6000);
+        }, 1200);
+      }
+    });
+  }
 });
+

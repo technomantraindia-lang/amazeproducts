@@ -5,7 +5,7 @@
 - Indexed source files: 21
 - Structural edges: 8
 - Matched end-to-end flows: 0
-- Updated: 2026-09-17T04:52:49.320Z
+- Updated: 2026-09-17T05:33:25.901Z
 
 ## Dependency edges
 - IMPORT index.html -> styles.css, site-chrome.js, script.js

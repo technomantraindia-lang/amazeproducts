@@ -172,6 +172,23 @@ img {
   background-color: var(--primary-blue);
 }
 
+/* Header authentication actions */
+.auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth-actions .btn {
+  padding: 10px 18px;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 760px) {
+  .auth-actions { gap: 6px; }
+  .auth-actions .btn { padding: 8px 11px; font-size: 0.72rem; }
+}
+
 /* ==========================================================================
    1. TOP NOTIFICATION BAR
    ========================================================================== */
@@ -2248,7 +2265,8 @@ body {
 .main-header.header-hidden { transform: translateY(-120%); }
 .main-header .container { padding: 0; max-width: 1240px; justify-content: center; position: relative; }
 .main-header .logo-link { position: absolute; left: 0; }
-.main-header > .container > .btn { position: absolute; right: 0; }
+.main-header > .container > .btn,
+.main-header > .container > .auth-actions { position: absolute; right: 0; }
 .logo-img { width: 70px; height: 70px; object-fit: contain; }
 .nav-menu { gap: 30px; }
 .nav-link { font-size: .88rem; font-weight: 700; color: #173962; }
@@ -2596,7 +2614,7 @@ body {
   .main-header { width: 100%; top: 0; border-radius: 0 0 16px 16px; padding: 9px 18px; }
   .logo-img { width: 58px; height: 58px; }
   .main-header .container { justify-content: space-between; }
-  .main-header .logo-link, .main-header > .container > .btn { position: static; }
+  .main-header .logo-link, .main-header > .container > .btn, .main-header > .container > .auth-actions { position: static; }
   .nav-menu { top: 72px; height: calc(100vh - 72px); }
   .hero-section { padding-top: 34px; }
   .hero-content { padding: 68px 0 100px; }

@@ -27,6 +27,7 @@ The extension refreshes this file automatically. Prefer its concise state over o
 - Next action: Inspect current prompt and workspace evidence before editing.
 
 ## Touched files in this capsule
+- .vscode/settings.json
 
 ## Recent files in this workspace/window
 

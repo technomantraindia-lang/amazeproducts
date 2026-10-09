@@ -5,7 +5,7 @@
 - Indexed source files: 21
 - Structural edges: 8
 - Matched end-to-end flows: 0
-- Updated: 2026-09-17T05:33:25.901Z
+- Updated: 2026-09-22T06:26:48.986Z
 
 ## Dependency edges
 - IMPORT index.html -> styles.css, site-chrome.js, script.js
@@ -30,11 +30,11 @@
 - UI about.css: .current, #e2edf5, .blue-button, .quality-section, .product-section, .team-copy, .purpose-icon, .eyebrow, .section-row, #e4f1f9, .about-button, .product-grid, #ffffff66, .footer-grid
 - UI about.html: #navMenu, #mobileToggle, #who-we-are, #contact, #scrollTopBtn, .about-page, .top-bar, .container, .top-bar-contact, .top-bar-item, .top-bar-message, .fas, .fa-phone-alt, .fa-envelope
 - UI certifications-banner.css: .hero, .hero-content, .blue-button, .play-safe, .hero-wave, .benefits, #effcff, #dff8ff, #f2fdff, .green, .standards, #ffffff, #f7fcff, #edfaff
-- UI certifications.css: #bce9ff, .footer-brand, .active, .blue-button, #dff7ff, #dff7ffad, #e8faff, .standards, .worldwide, .cta, .standards-copy, #f6fdff, #e9faff, #a6dff8
+- UI certifications.css: .site-header, #fff, #bce9ff, .brand, .footer-brand, .active, .quote, .blue-button, .hero, #dff7ff, #dff7ffad, #e8faff, .hero-content, .eyebrow
 - UI certifications.html: #standards, .site-header, .brand, .active, .quote, .fa-solid, .fa-arrow-right, .hero, .hero-content, .eyebrow, .blue-button, .play-safe, .hero-wave, .benefits
-- UI contact-us-overrides.css: .contact-page, .details-card, .contact-presence, .presence-head, .contact-kicker, .presence-stats, .location-grid, .contact-cta, .process, .section-lead, .process-grid, #cdeafa, #fff
+- UI contact-us-overrides.css: .contact-page, .details-card, .contact-presence, .presence-head, .presence-title-box, .presence-wave-badge, #ffffff, .presence-titles, .presence-stats, .stat-card, .location-grid, .contact-cta, .process, .process-header
 - UI contact-us.css: .contact-page, .contact-shell, .contact-kicker, .contact-hero, .contact-hero-copy, .contact-hero-actions, .contact-button, #fff, #ffffffbd, .contact-scribble, .contact-help, #f7fdffdc, #e5f9ffdc, .help-grid
-- UI contact-us.html: #details, #message, #scrollTopBtn, .contact-page, .contact-hero, .contact-shell, .contact-hero-copy, .contact-kicker, .contact-hero-actions, .contact-button, .primary, .fas, .fa-arrow-right, .outline
+- UI contact-us.html: #details, #message, #contact-name, #contact-company, #contact-email, #contact-phone, #contact-country, #contact-subject, #contact-message-input, #formResponseMsg, #scrollTopBtn, .contact-page, .contact-hero, .contact-shell
 - UI industries.css: .industries-page, .main-header, .container, .nav-link, #fff, #bce4ff, .hero-actions, .intro-section, .sectors-section, .section-title-row, #cceafb, #eaf8ff, .project-grid, #c8ecfc
 - UI industries.html: #navMenu, #mobileToggle, #sectors, #solutions, #projects, #contact, #scrollTopBtn, .industries-page, .top-bar, .container, .top-bar-contact, .top-bar-item, .top-bar-message, .fas
 - UI products-motion.css: .products-motion-ready, .products-reveal, .products-header-enter, .products-page, .nav-link, .btn-primary, .p-btn, .fa-arrow-right, .product-hero, .p-hero-copy, .p-scribble, .product-cards, .p-benefits, .p-showcase

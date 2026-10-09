@@ -6,7 +6,7 @@
 - Technology: HTML/CSS/JavaScript
 - Active file at refresh: None
 - Local code graph: 21 files · 8 edges · 0 matched flows
-- Refreshed: 2026-09-17T05:33:25.902Z
+- Refreshed: 2026-09-22T06:26:49.004Z
 
 ## Framework Intelligence (V4.7.8)
 - Profiles: html-static
@@ -27,9 +27,10 @@
 - why-choose-us.css
 
 ## Recently edited files
-- None recorded yet
+- .vscode/settings.json
 
 ## High-value project files
+- .vscode/settings.json
 - index.html
 - styles.css
 - .clinerules/05-technomantra-execution-mode.md

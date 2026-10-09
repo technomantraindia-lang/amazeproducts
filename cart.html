@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cart | Amaze Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cart.css">
+  <script src="site-chrome.js" defer></script>
+  <script src="cart.js" defer></script>
+</head>
+<body class="cart-page">
+  <header></header>
+  <main>
+    <section class="cart-hero"><div class="cart-shell"><p>PRODUCT CART</p><h1>Build Your Quote Request</h1><span>Select products, adjust quantities, and send your cart directly to our CRM team.</span></div></section>
+    <section class="cart-shell cart-layout">
+      <div>
+        <div class="section-heading"><div><p>YOUR SELECTION</p><h2>Cart items</h2></div><button id="clearCart" class="text-button" type="button">Clear cart</button></div>
+        <div id="cartItems" class="cart-items" aria-live="polite"></div>
+        <div id="emptyCart" class="empty-cart" hidden><i class="fas fa-bag-shopping"></i><h3>Your cart is empty</h3><p>Add products from the catalogue below to request a tailored quotation.</p></div>
+      </div>
+      <aside class="cart-summary">
+        <h2>Quote summary</h2>
+        <div class="summary-row"><span>Subtotal</span><b id="cartSubtotal">₹0.00</b></div>
+        <div class="summary-row"><span>Estimated GST</span><b id="cartGst">₹0.00</b></div>
+        <div class="summary-total"><span>Estimated total</span><b id="cartTotal">₹0.00</b></div>
+        <p class="summary-note">Final pricing, stock availability, freight and taxes are confirmed in your quotation.</p>
+      </aside>
+    </section>
+    <section class="cart-shell request-section" id="request">
+      <div><p>READY TO REQUEST A QUOTE?</p><h2>Send your cart to our team</h2><span>We will create a tailored proposal from your selected products.</span></div>
+      <form id="cartRequestForm" class="request-form">
+        <input name="name" placeholder="Full name *" required>
+        <input name="company" placeholder="Company / park name">
+        <input name="email" type="email" placeholder="Email address *" required>
+        <input name="phone" placeholder="Phone / WhatsApp *" required>
+        <input name="country" placeholder="Country">
+        <textarea name="note" placeholder="Add delivery location, branding or other requirements"></textarea>
+        <button type="submit">Send quote request <i class="fas fa-arrow-right"></i></button>
+        <p id="requestMessage" class="request-message" aria-live="polite"></p>
+      </form>
+    </section>
+    <section class="catalogue-section"><div class="cart-shell"><div class="section-heading"><div><p>LIVE CRM CATALOGUE</p><h2>Add products to your cart</h2></div><input id="catalogueSearch" type="search" placeholder="Search products"></div><div id="catalogue" class="catalogue-grid"></div></div></section>
+  </main>
+  <footer></footer>
+</body>
+</html>

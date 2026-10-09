@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Amaze Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <main class="login-page">
+    <section class="brand-panel" aria-label="Amaze Products">
+      <a class="brand-logo" href="index.html"><img src="assets/logo.png" alt="Amaze Products"></a>
+      <div class="brand-copy"><p class="eyebrow"><span></span> AMAZE PRODUCTS</p><h1>Join the team<br>behind <em>more fun.</em></h1><p class="brand-description">Request secure access to the workspace that supports every Amaze Products project.</p></div>
+      <div class="trust-row"><div class="trust-icon"><i class="fa-solid fa-shield-heart"></i></div><p><strong>Secure team access</strong><br>Your request is reviewed by an administrator.</p></div>
+      <div class="water-rings ring-one"></div><div class="water-rings ring-two"></div><div class="wave" aria-hidden="true"></div>
+    </section>
+    <section class="form-panel">
+      <a class="mobile-logo" href="index.html"><img src="assets/logo.png" alt="Amaze Products"></a>
+      <div class="login-card">
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to website</a>
+        <div class="form-heading"><div class="heading-icon"><i class="fa-solid fa-user-plus"></i></div><p class="eyebrow dark">CREATE ACCESS</p><h2>Register</h2><p>Submit your details to request a CRM account.</p></div>
+        <form action="mailto:admin@amazeproducts.com" method="post" enctype="text/plain">
+          <label for="name">Your name</label><div class="field-wrap"><i class="fa-regular fa-user"></i><input id="name" name="name" type="text" autocomplete="name" placeholder="Enter your full name" required></div>
+          <label for="email">Work email</label><div class="field-wrap"><i class="fa-regular fa-envelope"></i><input id="email" name="email" type="email" autocomplete="email" placeholder="you@amazeproducts.com" required></div>
+          <label for="request">Access request</label><div class="field-wrap"><i class="fa-regular fa-comment"></i><input id="request" name="request" type="text" placeholder="Your team or role" required></div>
+          <button class="sign-in" type="submit">Send registration request <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+        <p class="help-text">Already have an account? <a href="login.html">Login</a></p>
+      </div>
+      <p class="security-note"><i class="fa-solid fa-lock"></i> Accounts are created by an authorised administrator.</p>
+    </section>
+  </main>
+</body>
+</html>

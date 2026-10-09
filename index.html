@@ -56,9 +56,10 @@
         <a href="products.html" class="nav-link">Products <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i></a>
         <a href="certifications.html" class="nav-link">Certifications</a>
         <a href="#contact" class="nav-link">Contact Us</a>
+        <a href="login.html" class="nav-link">Staff Login</a>
       </nav>
 
-      <a href="#contact" class="btn btn-primary">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      <div class="auth-actions"><a href="login.html" class="btn btn-secondary">Login</a><a href="register.html" class="btn btn-primary">Register <i class="fas fa-arrow-right"></i></a></div>
       
       <div class="mobile-toggle" id="mobileToggle">
         <i class="fas fa-bars"></i>
@@ -588,7 +589,7 @@
 
         <!-- Right Side: Form Card -->
         <div class="quote-form-card">
-          <form id="quoteForm" onsubmit="event.preventDefault(); alert('Thank you! Your quote request has been submitted successfully.');">
+          <form id="quoteForm">
             <div class="form-row">
               <div class="form-group">
                 <label for="fullName">FULL NAME</label>
@@ -608,6 +609,13 @@
               <div class="form-group">
                 <label for="country">COUNTRY</label>
                 <input type="text" id="country" placeholder="Where is the project?">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">PHONE / WHATSAPP</label>
+                <input type="tel" id="phone" placeholder="Your phone number" required>
               </div>
             </div>
 
@@ -812,7 +820,7 @@
         <p class="quote-modal-subtitle">Fill out your project details below and our commercial engineering team will respond within 24 hours.</p>
       </div>
 
-      <form id="popupQuoteForm" class="quote-modal-form" onsubmit="event.preventDefault(); alert('Thank you! Your quote request has been submitted. Our team will contact you shortly.'); document.getElementById('quoteModalOverlay').classList.remove('active'); document.body.style.overflow='';">
+      <form id="popupQuoteForm" class="quote-modal-form">
         <div class="modal-form-row">
           <div class="modal-form-group">
             <label for="popFullName">FULL NAME *</label>

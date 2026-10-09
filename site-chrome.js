@@ -125,7 +125,8 @@
     ['why-choose-us.html', 'Why Choose Us'],
     ['products.html', 'Products <i class="fas fa-chevron-down" aria-hidden="true"></i>'],
     ['certifications.html', 'Certifications'],
-    ['contact-us.html', 'Contact Us']
+    ['contact-us.html', 'Contact Us'],
+    ['cart.html', '<i class="fas fa-cart-shopping" aria-label="Cart"></i>']
   ];
 
   const navigation = links.map(([href, label]) => {
@@ -161,7 +162,10 @@
       <div class="container">
         <a href="index.html" class="logo-link"><img src="assets/logo.png" alt="Amaze Products Logo" class="logo-img"></a>
         <nav class="nav-menu" id="navMenu" aria-label="Main navigation">${navigation}</nav>
-        <a href="contact-us.html#message" class="btn btn-primary">Get a Quote <i class="fas fa-arrow-right"></i></a>
+        <div class="auth-actions">
+          <a href="http://localhost:3000/login" class="btn btn-secondary">Login</a>
+          <a href="register.html" class="btn btn-primary">Register <i class="fas fa-arrow-right"></i></a>
+        </div>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation"><i class="fas fa-bars"></i></button>
       </div>`;
 
@@ -176,16 +180,6 @@
       mobileToggle.querySelector('i').className = 'fas fa-bars';
     }));
   }
-
-  // Every header quote button opens the same working quote form, regardless
-  // of the page from which it is clicked.
-  document.addEventListener('click', event => {
-    const quoteButton = event.target.closest('header a, header button');
-    if (!quoteButton || !quoteButton.textContent.includes('Get a Quote')) return;
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    window.location.href = 'contact-us.html#message';
-  }, true);
 
   const footer = document.querySelector('footer');
   if (footer) {

@@ -297,14 +297,114 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8. Contact Form Interactive Handler
+  // 8. Website-to-CRM lead capture
+  // Set window.AMEZ_CRM_API_URL before this script to use a deployed CRM URL.
+  const crmApiUrl = (window.AMEZ_CRM_API_URL || 'http://localhost:3000').replace(/\/$/, '');
+
+  async function createLead(data) {
+    const response = await fetch(`${crmApiUrl}/api/inquiries`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(result.error || 'Unable to send your request. Please try again.');
+    return result;
+  }
+
+  function setButtonPending(button, pending, pendingText) {
+    if (!button) return;
+    button.disabled = pending;
+    const label = button.querySelector('span');
+    if (!button.dataset.label) button.dataset.label = label ? label.innerText : button.innerText;
+    if (label) label.innerText = pending ? pendingText : button.dataset.label;
+    const icon = button.querySelector('i');
+    if (icon) icon.className = pending ? 'fas fa-spinner fa-spin' : 'fas fa-arrow-right';
+  }
+
+  function bindQuoteForm(form, fields, onSuccess) {
+    if (!form) return;
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const button = form.querySelector('button[type="submit"]');
+      setButtonPending(button, true, 'Sending...');
+      try {
+        await createLead({
+          name: document.getElementById(fields.name).value,
+          companyName: document.getElementById(fields.company).value,
+          email: document.getElementById(fields.email).value,
+          phone: document.getElementById(fields.phone).value,
+          country: fields.country ? document.getElementById(fields.country).value : '',
+          subject: fields.subject ? document.getElementById(fields.subject).value : 'Quote request',
+          requirement: [
+            document.getElementById(fields.details).value,
+            document.getElementById(fields.delivery).value ? `Target delivery: ${document.getElementById(fields.delivery).value}` : ''
+          ].filter(Boolean).join('\n')
+        });
+        form.reset();
+        onSuccess();
+      } catch (error) {
+        alert(error.message || 'Unable to send your request. Please try again.');
+      } finally {
+        setButtonPending(button, false, 'Sending...');
+      }
+    });
+  }
+
+  bindQuoteForm(document.getElementById('quoteForm'), {
+    name: 'fullName', company: 'companyName', email: 'workEmail', phone: 'phone',
+    country: 'country', subject: 'projectType', details: 'projectDetails', delivery: 'targetDelivery'
+  }, () => alert('Thank you! Your quote request has been sent successfully.'));
+
+  bindQuoteForm(document.getElementById('popupQuoteForm'), {
+    name: 'popFullName', company: 'popCompany', email: 'popWorkEmail', phone: 'popPhone',
+    subject: 'popProjectType', details: 'popDetails', delivery: 'popDelivery'
+  }, () => {
+    const modal = document.getElementById('quoteModalOverlay');
+    if (modal) modal.classList.remove('active');
+    document.body.style.overflow = '';
+    alert('Thank you! Your quote request has been sent successfully.');
+  });
+
+  // 9. Contact Form Interactive Handler
   const contactForm = document.getElementById('message');
   const responseMsg = document.getElementById('formResponseMsg');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = contactForm.querySelector('.contact-submit-btn');
+      setButtonPending(submitBtn, true, 'Sending Message...');
+      try {
+        await createLead({
+          name: contactForm.elements.fullName.value,
+          companyName: contactForm.elements.companyName.value,
+          email: contactForm.elements.email.value,
+          phone: contactForm.elements.phone.value,
+          country: contactForm.elements.country.value,
+          subject: contactForm.elements.subject.value,
+          requirement: contactForm.elements.message.value
+        });
+        contactForm.reset();
+        if (responseMsg) {
+          responseMsg.className = 'form-response-msg success';
+          responseMsg.style.display = 'block';
+          responseMsg.innerText = 'Thank you! Your message has been sent. Our team will get back to you shortly.';
+        }
+      } catch (error) {
+        if (responseMsg) {
+          responseMsg.className = 'form-response-msg error';
+          responseMsg.style.display = 'block';
+          responseMsg.innerText = error.message || 'Unable to send your message. Please try again.';
+        }
+      } finally {
+        setButtonPending(submitBtn, false, 'Sending Message...');
+        setTimeout(() => {
+          if (responseMsg) responseMsg.style.display = 'none';
+        }, 6000);
+      }
+      return;
+      const legacySubmitBtn = contactForm.querySelector('.contact-submit-btn');
       const btnSpan = submitBtn ? submitBtn.querySelector('span') : null;
       const btnIcon = submitBtn ? submitBtn.querySelector('i') : null;
 
@@ -334,4 +434,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
